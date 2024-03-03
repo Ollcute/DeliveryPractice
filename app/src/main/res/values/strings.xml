@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Redi Express</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_skip">Skip</string>
+    <string name="text_next">Next</string>
+    <string name="text_sign_up">Sign Up</string>
+    <string name="text_already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="text_create_an_account">Create an account</string>
+    <string name="text_complete_the_sign_up_process_to_get_started">Complete the sign up process to get started</string>
+    <string name="text_full_name">Full Name</string>
+    <string name="text_abecd_fsgh">Abecd fsgh</string>
+    <string name="text_phone_number">Phone Number</string>
+    <string name="text_000000000000">000000000000</string>
+    <string name="text_email_address">Email Address</string>
+    <string name="text_mail_com">***********@mail.com</string>
+    <string name="text_password">Password</string>
+    <string name="text_password_hint">**********</string>
+    <string name="text_by_ticking_this_box_you_agree_to_our_terms_and_conditions_and_private_policy">By ticking this box, you agree to our Terms and conditions and private policy</string>
+    <string name="text_or_sign_in_using">or sign in using</string>
+    <string name="text_remember_password">Remember password</string>
+    <string name="text_forgot_password">Forgot Password?</string>
+    <string name="text_log_in">Log in</string>
+    <string name="text_don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="text_or_log_in_using">or log in using</string>
+    <string name="text_send_otp">Send OTP</string>
+    <string name="text_remember_password_back_to_sign_in">Remember password? Back to Sign In</string>
+    <string name="text_forgot_password_title">Forgot Password</string>
+    <string name="text_enter_your_email_address">Enter your email address</string>
+    <string name="text_otp_verification">OTP Verification</string>
+    <string name="еуче_enter_the_6_digit_numbers_sent_to_your_email">Enter the 6 digit numbers sent to your email</string>
+    <string name="text_if_you_didn_t_receive_code_resend">If you didn’t receive code, Resend</string>
+    <string name="text_set_new_password">Set New Password</string>
+    <string name="text_new_password">New Password</string>
+    <string name="text_enter_new_password">Enter new password</string>
+    <string name="text_confirm_password">Confirm Password</string>
+    <string name="text_home">Home</string>
+    <string name="text_wallet">Wallet</string>
+    <string name="text_track">Track</string>
+    <string name="text_profile">Profile</string>
+    <string name="text_terms_and_conditions_and_private_policy">Terms and conditions and private policy</string>
+</resources>

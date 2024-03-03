@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RediExpressSession1" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorDisabled">@color/colorDisabled</item>
+
+        <item name="primaryColor">@color/colorPrimary7</item>
+        <item name="secondaryTextColor">@color/grey_hint</item>
+
+        <item name="backgroundColor">@color/white</item>
+        <item name="searchBarColor">@color/grey_hint</item>
+        <item name="homeButtonsColor">@color/grey_F2</item>
+        <item name="homeButtonsSecondaryTextColor">@color/grey_3A</item>
+    </style>
+
+    <style name="Theme.RediExpressSession1" parent="Base.Theme.RediExpressSession1" />
+</resources>

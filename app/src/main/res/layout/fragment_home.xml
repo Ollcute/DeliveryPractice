@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.main.home.HomeFragment"
+    android:background="?attr/backgroundColor"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="25dp">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Search services"
+        android:textSize="12sp"
+        android:textColorHint="@color/grey_A7"
+        android:paddingStart="12dp"
+        android:paddingEnd="36dp"
+        android:background="@drawable/search_edit_text_background" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"
+        android:layout_marginEnd="6dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_home_profile_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_profile_photo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="14dp"
+        android:src="@drawable/ic_empty_profile_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_hello_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile_photo"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+        app:layout_constraintBottom_toTopOf="@id/tv_great_time"
+        tools:text="Hello ken" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_great_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/secondaryTextColor"
+        android:textSize="12sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile_photo"
+        app:layout_constraintTop_toBottomOf="@id/tv_hello_user"
+        app:layout_constraintBottom_toBottomOf="@id/appCompatImageView"
+        android:text="We trust you are having a great time" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_notification"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_special_for_you"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Special for you"
+        android:layout_marginTop="30dp"
+        android:textSize="14sp"
+        android:drawableEnd="@drawable/ic_arrow_square_right"
+        android:textColor="@color/colorSecondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_home_ads"
+        tools:itemCount="4"
+        android:layout_marginTop="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tv_special_for_you" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/materialTextView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="What would you like to do"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_ads" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_customer_care"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/home_buttons_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toTopOf="@id/btn_find_your_wallet"
+        app:layout_constraintEnd_toStartOf="@id/btn_send_package"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView10" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/ic_customer_service"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="8dp"
+        android:tint="@drawable/home_icon_text_color"
+        app:layout_constraintBottom_toTopOf="@id/tv_customer_service_title"
+        app:layout_constraintStart_toStartOf="@+id/btn_customer_care"
+        app:layout_constraintTop_toTopOf="@+id/btn_customer_care" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_customer_service_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer Care"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/btn_customer_care"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
+        app:layout_constraintBottom_toTopOf="@id/tv_customer_service_desc"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_customer_service_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Our customer care service line is available from 8 -9pm week days and 9 - 5 weekends - tap to call us today"
+        android:textSize="8sp"
+        android:textColor="?attr/homeButtonsSecondaryTextColor"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_customer_care"
+        app:layout_constraintEnd_toEndOf="@+id/btn_customer_care"
+        app:layout_constraintStart_toStartOf="@+id/btn_customer_care"
+        app:layout_constraintTop_toBottomOf="@+id/tv_customer_service_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_send_package"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/home_buttons_background"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView10"
+        app:layout_constraintStart_toEndOf="@id/btn_customer_care"
+        app:layout_constraintBottom_toTopOf="@id/btn_book_rider"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView3"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/ic_send_package"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_send_package_title"
+        app:layout_constraintStart_toStartOf="@+id/btn_send_package"
+        app:layout_constraintTop_toTopOf="@+id/btn_send_package" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_send_package_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send a package"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/btn_send_package"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3"
+        app:layout_constraintBottom_toTopOf="@id/tv_send_package_desc"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_send_package_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Request for a driver to pick up or deliver your package for you"
+        android:textSize="8sp"
+        android:textColor="?attr/homeButtonsSecondaryTextColor"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_send_package"
+        app:layout_constraintEnd_toEndOf="@+id/btn_send_package"
+        app:layout_constraintStart_toStartOf="@+id/btn_send_package"
+        app:layout_constraintTop_toBottomOf="@+id/tv_send_package_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_find_your_wallet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/home_buttons_background"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/btn_customer_care"
+        app:layout_constraintEnd_toStartOf="@id/btn_book_rider"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView4"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/ic_find_wallet"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_find_your_wallet_title"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_your_wallet"
+        app:layout_constraintTop_toTopOf="@+id/btn_find_your_wallet" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_find_your_wallet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fund your wallet"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_your_wallet"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView4"
+        app:layout_constraintBottom_toTopOf="@id/tv_find_your_wallet_desc"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_find_your_wallet_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To fund your wallet is as easy as ABC, make use of our fast technology and top-up your wallet today"
+        android:textSize="8sp"
+        android:textColor="?attr/homeButtonsSecondaryTextColor"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_find_your_wallet"
+        app:layout_constraintEnd_toEndOf="@+id/btn_find_your_wallet"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_your_wallet"
+        app:layout_constraintTop_toBottomOf="@+id/tv_find_your_wallet_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_book_rider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/home_buttons_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_find_your_wallet"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_package" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView5"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/ic_chats"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_book_rider_title"
+        app:layout_constraintStart_toStartOf="@+id/btn_book_rider"
+        app:layout_constraintTop_toTopOf="@+id/btn_book_rider" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_book_rider_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chats"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/btn_book_rider"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView5"
+        app:layout_constraintBottom_toTopOf="@id/tv_book_rider_desc"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_book_rider_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Search for available rider within your area"
+        android:textSize="8sp"
+        android:textColor="?attr/homeButtonsSecondaryTextColor"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_book_rider"
+        app:layout_constraintEnd_toEndOf="@+id/btn_book_rider"
+        app:layout_constraintStart_toStartOf="@+id/btn_book_rider"
+        app:layout_constraintTop_toBottomOf="@+id/tv_book_rider_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
