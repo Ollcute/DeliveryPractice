@@ -2,14 +2,12 @@ package ru.kit.rediexpress.di
 
 import ru.kit.rediexpress.ui.activity.login.LoginViewModel
 import ru.kit.rediexpress.ui.activity.main.MainViewModel
-import ru.kit.rediexpress.ui.fragments.login.forgotPassword.ForgotPasswordFragment
 import ru.kit.rediexpress.ui.fragments.login.forgotPassword.ForgotPasswordViewModel
 import ru.kit.rediexpress.ui.fragments.login.newPassword.NewPasswordViewModel
 import ru.kit.rediexpress.ui.fragments.login.onboarding.OnboardingViewModel
-import ru.kit.rediexpress.ui.fragments.login.otpVerification.OTPVerificationViewModel
+import ru.kit.rediexpress.ui.fragments.login.emailVerification.EmailVerificationViewModel
 import ru.kit.rediexpress.ui.fragments.login.privacyPolicy.PrivacyPolicyViewModel
 import ru.kit.rediexpress.ui.fragments.login.signIn.SignInViewModel
-import ru.kit.rediexpress.ui.fragments.login.signUp.SignUpFragment
 import ru.kit.rediexpress.ui.fragments.login.signUp.SignUpViewModel
 import ru.kit.rediexpress.ui.fragments.login.splash.SplashViewModel
 import ru.kit.rediexpress.ui.fragments.main.home.HomeViewModel
@@ -58,7 +56,7 @@ val uiModule = module {
     }
 
     viewModel {
-        OTPVerificationViewModel()
+        EmailVerificationViewModel()
     }
 
     viewModel {

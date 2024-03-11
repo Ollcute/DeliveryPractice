@@ -15,11 +15,9 @@ import ru.kit.rediexpress.R
 import ru.kit.rediexpress.databinding.FragmentSignInBinding
 import ru.kit.rediexpress.ui.activity.main.MainActivity
 import ru.kit.rediexpress.ui.base.BaseFragment
-import ru.kit.rediexpress.ui.base.error_dialog.ErrorDialog
-import ru.kit.rediexpress.ui.base.error_dialog.ErrorDialogParams
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.kit.rediexpress.domain.SharedPref
 
 class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
     FragmentSignInBinding::inflate
@@ -31,7 +29,9 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         lifecycleScope.launch {
             event.collect { event ->
                 when(event) {
-                    SignInEvent.OnSuccessSignIn -> startMainActivity()
+                    SignInEvent.OnSuccessSignIn -> {
+                        startMainActivity()
+                    }
                 }
             }
         }
@@ -62,6 +62,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
             }
 
             btnSignIn.setOnClickListener {
+                SharedPref(requireContext()).email = etEmail.text.toString()
                 viewModel.login(
                     email = etEmail.text.toString(),
                     password = etPassword.text.toString()

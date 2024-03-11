@@ -10,8 +10,15 @@ import android.text.method.PasswordTransformationMethod
 import android.text.style.ClickableSpan
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import io.github.jan.supabase.gotrue.auth
+import io.github.jan.supabase.gotrue.providers.builtin.Email
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 import ru.kit.rediexpress.R
 import ru.kit.rediexpress.databinding.FragmentSignUpBinding
 import ru.kit.rediexpress.ui.activity.main.MainActivity
@@ -19,6 +26,8 @@ import ru.kit.rediexpress.ui.base.BaseFragment
 import ru.kit.rediexpress.ui.base.error_dialog.ErrorDialog
 import ru.kit.rediexpress.ui.base.error_dialog.ErrorDialogParams
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.kit.rediexpress.domain.supabase.supabase
+import ru.kit.rediexpress.ui.fragments.login.emailVerification.EmailVerificationParams
 
 /**
  * A simple [Fragment] subclass.
@@ -83,13 +92,21 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
             }
 
             btnSignUp.setOnClickListener {
-                viewModel.signUp(
-                    fullname = etFullName.text.toString(),
-                    phone = etPhone.text.toString(),
-                    email = etEmail.text.toString(),
-                    password = etPassword.text.toString(),
-                    repeatPassword = etPassword.text.toString()
-                )
+                lifecycleScope.launch {
+                    val user = supabase.auth.signUpWith(Email) {
+                        this.email = etEmail.text.toString()
+                        this.password = etPassword.text.toString()
+                    }
+
+                    if (user != null) {
+                        val params = bundleOf("email" to EmailVerificationParams(
+                            fullName = etFullName.text.toString(),
+                            email = etEmail.text.toString(),
+                            phone = etPhone.text.toString()
+                        ))
+                        findNavController().navigate(R.id.action_signUpFragment_to_emailVerificationFragment, params)
+                    }
+                }
 
 //                if (viewModel.checkEmail(etEmail.text.toString())) {
 //                    if (cbRemember.isChecked) {

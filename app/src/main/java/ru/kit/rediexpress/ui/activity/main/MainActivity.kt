@@ -2,11 +2,16 @@ package ru.kit.rediexpress.ui.activity.main
 
 import android.os.Bundle
 import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
+import io.github.jan.supabase.postgrest.from
+import kotlinx.coroutines.launch
 import ru.kit.rediexpress.R
 import ru.kit.rediexpress.databinding.ActivityMainBinding
 import ru.kit.rediexpress.ui.base.BaseActivity
 import ru.kit.rediexpress.utils.setupWithNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.kit.rediexpress.domain.models.InsertProfileModel
+import ru.kit.rediexpress.domain.supabase.supabase
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(
     ActivityMainBinding::inflate

@@ -1,18 +1,13 @@
 package ru.kit.rediexpress.ui.fragments.login.otpVerification
 
-import android.os.BaseBundle
-import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
 import ru.kit.rediexpress.R
 import ru.kit.rediexpress.databinding.FragmentOTPVerificationBinding
 import ru.kit.rediexpress.ui.base.BaseFragment
