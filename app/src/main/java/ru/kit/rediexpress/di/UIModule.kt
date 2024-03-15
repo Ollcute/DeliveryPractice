@@ -16,6 +16,7 @@ import ru.kit.rediexpress.ui.fragments.main.track.TrackViewModel
 import ru.kit.rediexpress.ui.fragments.main.wallet.WalletViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import ru.kit.rediexpress.ui.fragments.main.chats.ChatsViewModel
 
 val uiModule = module {
 
@@ -69,6 +70,10 @@ val uiModule = module {
 
     viewModel {
         WalletViewModel()
+    }
+
+    viewModel {
+        ChatsViewModel()
     }
 
     viewModel {

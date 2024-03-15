@@ -5,10 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import io.github.jan.supabase.postgrest.from
+import kotlinx.coroutines.launch
 import ru.kit.rediexpress.R
 import ru.kit.rediexpress.databinding.FragmentWalletBinding
 import ru.kit.rediexpress.ui.base.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.kit.rediexpress.domain.SelectTransactionsModel
+import ru.kit.rediexpress.domain.SharedPref
+import ru.kit.rediexpress.domain.models.SelectProfileModel
+import ru.kit.rediexpress.domain.supabase.supabase
 
 /**
  * A simple [Fragment] subclass.
@@ -20,10 +27,29 @@ class WalletFragment : BaseFragment<FragmentWalletBinding, WalletViewModel>(
 ) {
     override val viewModel: WalletViewModel by viewModel()
 
-    override fun initView() {
-        binding.apply {
+    override fun initView(): Unit = with(binding) {
+        lifecycleScope.launch {
+            val email = SharedPref(requireContext()).email.lowercase()
+            val profile = supabase.from("profiles").select {
+                filter {
+                    eq("email_address", email)
+                }
+            }.decodeList<SelectProfileModel>().first()
 
+            tvUsername.text = profile.full_name
+
+
+
+//            val transactions = supabase.from("transactions").select {
+//                filter {
+//                    eq("profile", profile.id)
+//                }
+//            }.decodeList<SelectTransactionsModel>()
+//
+//            println(transactions)
         }
+
+
     }
 
     override fun observeViewModel() {
