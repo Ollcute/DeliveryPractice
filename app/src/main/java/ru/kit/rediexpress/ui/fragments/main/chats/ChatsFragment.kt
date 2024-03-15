@@ -12,6 +12,8 @@ class ChatsFragment : BaseFragment<FragmentChatsBinding, ChatsViewModel>(
 ) {
     override val viewModel: ChatsViewModel by viewModel()
 
+    private val chatsAdapter by lazy { ChatsAdapter() }
+
     private val chats = listOf(
         ChatDetails(username = "Ivan", lastMessage = "Hello World!"),
         ChatDetails(username = "Olga", lastMessage = "Deuchland"),
@@ -19,9 +21,8 @@ class ChatsFragment : BaseFragment<FragmentChatsBinding, ChatsViewModel>(
         ChatDetails(username = "Alex666", lastMessage = "Rummstein"),
     )
 
-
     override fun initView(): Unit = with(binding) {
-        rvChats.adapter = ChatsAdapter(chats)
+        rvChats.adapter = chatsAdapter
 
         fchatsBtnBack.setOnClickListener {
             findNavController().popBackStack()
